@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wa6sn</title>
+  <style>
+    :root {
+      --text:   #1c1c1e;
+      --muted:  #6b7280;
+      --accent: #2b4acb;
+      --border: #e0e0e0;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", sans-serif;
+      --font-mono: "SF Mono", "Fira Code", ui-monospace, monospace;
+      --max: 640px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      background: #fff;
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    a { color: var(--accent); }
+    a:hover { text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── TOP ── */
+    #top { padding: 3.5rem 0 3rem; }
+
+    .top-name {
+      font-size: clamp(2rem, 5.5vw, 3.25rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .top-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+    }
+
+    .top-links a { color: var(--accent); text-decoration: none; }
+    .top-links a:hover { text-decoration: underline; }
+
+    /* ── OUTPUTS ── */
+    section { padding: 3rem 0; }
+
+    .section-label {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .output-list { display: flex; flex-direction: column; }
+
+    .output-item {
+      display: grid;
+      grid-template-columns: 4rem 1fr;
+      gap: 0 1rem;
+      padding: 0.4375rem 0;
+      border-top: 1px solid var(--border);
+      align-items: baseline;
+    }
+
+    .output-item:last-child { border-bottom: 1px solid var(--border); }
+
+    .output-date {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .output-comment {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    .output-title {
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--border);
+    }
+
+    .output-title:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-name { font-size: 0.8125rem; color: var(--muted); }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-links a {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 520px) {
+      .output-item { grid-template-columns: 3.25rem 1fr; }
+      #top { padding: 2.5rem 0 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">wa6sn</a>
+      <ul class="nav-links">
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section id="top">
+      <div class="wrap">
+        <h1 class="top-name">wa6sn</h1>
+        <div class="top-links">
+          <a href="https://github.com/wa6sn" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://speakerdeck.com/wa6sn" target="_blank" rel="noopener">Speaker Deck</a>
+          <a href="https://wrsn0.hatenablog.com/" target="_blank" rel="noopener">Blog</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="articles">
+      <div class="wrap">
+        <p class="section-label">記事</p>
+        <div class="output-list">
+<!-- ARTICLES_START -->
+          <div class="output-item">
+            <span class="output-date">2026/06</span>
+            <div>
+              <a href="https://tech.giftee.co.jp/entry/2026/06/17/120931" class="output-title" target="_blank" rel="noopener">社内向けアプリを爆速で公開するためのプラットフォームを作った</a>
+              <p class="output-comment">giftee Tech Blog</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2026/06</span>
+            <div>
+              <a href="https://tech.giftee.co.jp/entry/2026/06/08/135946" class="output-title" target="_blank" rel="noopener">Proposal Boost なる制度を作った</a>
+              <p class="output-comment">giftee Tech Blog</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2025/09</span>
+            <div>
+              <a href="https://wrsn0.hatenablog.com/entry/2025/09/16/211251" class="output-title" target="_blank" rel="noopener">Kubestronaut ということになったので、コツとかのメモ</a>
+              <p class="output-comment">個人ブログ</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2025/03</span>
+            <div>
+              <a href="https://tech.giftee.co.jp/entry/2025/03/31/095425" class="output-title" target="_blank" rel="noopener">「マルチアカウント環境での、そこまでがんばらない RI/SP 運用設計」という話をしました</a>
+              <p class="output-comment">giftee Tech Blog</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2024/11</span>
+            <div>
+              <a href="https://tech.giftee.co.jp/entry/2024/11/14/162341" class="output-title" target="_blank" rel="noopener">AWS GameDay を社内開催しました！</a>
+              <p class="output-comment">giftee Tech Blog</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2024/11</span>
+            <div>
+              <a href="https://tech.giftee.co.jp/entry/2024/11/12/101202" class="output-title" target="_blank" rel="noopener">「プロダクトセキュリティ」の社内講義の資料を公開します</a>
+              <p class="output-comment">giftee Tech Blog</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2024/11</span>
+            <div>
+              <a href="https://wrsn0.hatenablog.com/entry/2024/11/08/220208" class="output-title" target="_blank" rel="noopener">S3 の ListBuckets API のレスポンスの CreationDate は（その名前に反して）変更されうる</a>
+              <p class="output-comment">個人ブログ</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2024/08</span>
+            <div>
+              <a href="https://sre-magazine.net/articles/4/aws_sso_permissions_inventory/" class="output-title" target="_blank" rel="noopener">AWS IAM Identity Center の棚卸しで権限クリープを防ぎたい</a>
+              <p class="output-comment">SRE Magazine（寄稿）</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2024/04</span>
+            <div>
+              <a href="https://tech.giftee.co.jp/entry/2024/04/03/110000" class="output-title" target="_blank" rel="noopener">AWS アカウントの合計が 150 を超えました</a>
+              <p class="output-comment">giftee Tech Blog</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2024/02</span>
+            <div>
+              <a href="https://wrsn0.hatenablog.com/entry/2024/02/22/092703" class="output-title" target="_blank" rel="noopener">「開発者向けの MySQL 入門」という勉強会をしました</a>
+              <p class="output-comment">個人ブログ</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2023/12</span>
+            <div>
+              <a href="https://tech.giftee.co.jp/entry/2023/12/04/110000" class="output-title" target="_blank" rel="noopener">開発合宿として、株式会社ギフティ 社内 ISUCON を開催しました！</a>
+              <p class="output-comment">giftee Tech Blog</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2023/06</span>
+            <div>
+              <a href="https://wrsn0.hatenablog.com/entry/2023/06/13/085221" class="output-title" target="_blank" rel="noopener">独学 CISSP 受験の記録</a>
+              <p class="output-comment">個人ブログ</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2022/09</span>
+            <div>
+              <a href="https://tech.giftee.co.jp/entry/2022/09/01/000000" class="output-title" target="_blank" rel="noopener">「ギルド」の取り組みを紹介します</a>
+              <p class="output-comment">giftee Tech Blog</p>
+            </div>
+          </div>
+<!-- ARTICLES_END -->
+        </div>
+      </div>
+    </section>
+
+    <section id="slides-list">
+      <div class="wrap">
+        <p class="section-label">スライド</p>
+        <div class="output-list">
+<!-- SLIDES_START -->
+          <div class="output-item">
+            <span class="output-date">2025/07</span>
+            <div>
+              <a href="/slides/202507-techbash/" class="output-title">特に知る必要のない AWS におけるパーティションという概念</a>
+              <p class="output-comment">社内向け LT 会</p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2025/03</span>
+            <div>
+              <a href="/slides/202503-srest-aws-cost-lt/" class="output-title">マルチアカウント環境での、そこまでがんばらない RI/SP 運用設計</a>
+              <p class="output-comment"><a href="https://srest.connpass.com/event/345078/" target="_blank" rel="noopener">AWSコスト 春の総決算2025</a></p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2025/01</span>
+            <div>
+              <a href="/slides/202501-finatext-aws-lt/" class="output-title">クロスアカウントな RDS Snapshot Export によるカジュアルなデータ集約の仕組み</a>
+              <p class="output-comment"><a href="https://finatext.connpass.com/event/341248/" target="_blank" rel="noopener">Finatext Tech Night #4</a></p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2024/12</span>
+            <div>
+              <a href="/slides/202412-findy-userlt/" class="output-title">恐る恐る発信してみたら思ったより反応がもらえたので、社内でも勧めていくことにした</a>
+              <p class="output-comment"><a href="https://findy.connpass.com/event/335692/" target="_blank" rel="noopener">Findyユーザー感謝祭 2024 〜 "私の飛躍" 発信することで見えた可能性〜</a></p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2024/06</span>
+            <div>
+              <a href="/slides/202406-delete-unused-dns-records/" class="output-title">不要な DNS リソースレコードは消そう！（一敗）</a>
+              <p class="output-comment"><a href="https://yuru-sre.connpass.com/event/317749/" target="_blank" rel="noopener">ゆるSRE勉強会 #6</a></p>
+            </div>
+          </div>
+          <div class="output-item">
+            <span class="output-date">2024/02</span>
+            <div>
+              <a href="/slides/mysql104/" class="output-title">開発者向け MySQL 入門</a>
+              <p class="output-comment">社内向け勉強会</p>
+            </div>
+          </div>
+<!-- SLIDES_END -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <ul class="footer-links">
+          <li><a href="https://github.com/wa6sn" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://speakerdeck.com/wa6sn" target="_blank" rel="noopener">Speaker Deck</a></li>
+          <li><a href="https://wrsn0.hatenablog.com/" target="_blank" rel="noopener">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wa6sn</title>
+  <meta name="description" content="wa6sn について">
+  <style>
+    :root {
+      --text:   #1c1c1e;
+      --muted:  #6b7280;
+      --accent: #2b4acb;
+      --border: #e0e0e0;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", sans-serif;
+      --font-mono: "SF Mono", "Fira Code", ui-monospace, monospace;
+      --max: 640px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      background: #fff;
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    a { color: var(--accent); }
+    a:hover { text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a[aria-current="page"] { color: var(--text); font-weight: 500; }
+
+    /* ── MAIN ── */
+    main { padding: 3.5rem 0 4rem; }
+
+    .lead {
+      font-size: 1.0625rem;
+      line-height: 1.85;
+    }
+    .lead + .lead { margin-top: 1rem; }
+
+    section { margin-top: 3rem; }
+
+    h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── 資格 ── */
+    .cert-group { margin-bottom: 1.5rem; }
+    .cert-group:last-child { margin-bottom: 0; }
+
+    .cert-kind {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      margin-bottom: 0.625rem;
+    }
+
+    .cert-list { list-style: none; }
+
+    .cert-list li {
+      display: flex;
+      gap: 0.875rem;
+      font-size: 0.9375rem;
+      padding: 0.1875rem 0;
+    }
+
+    .cert-date {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--muted);
+      flex-shrink: 0;
+      width: 4.5rem;
+      padding-top: 0.0625rem;
+    }
+
+    .cert-name .expired {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-left: 0.375rem;
+    }
+
+    /* ── Contact ── */
+    .contact { font-size: 0.9375rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-name { font-size: 0.8125rem; color: var(--muted); }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-links a {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">wa6sn</a>
+      <ul class="nav-links">
+        <li><a href="/about.html" aria-current="page">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <p class="lead">
+        MySQL データベースの大規模運用、クラウドベンダーのソリューションアーキテクト、データ基盤の構築、プロダクトセキュリティ推進等の業務を行ってきました。社内 ISUCON の企画・開催、技術広報、組織づくりのための制度提案といったことを行うこともあり、エンジニア組織をより強くしていきたいというモチベーションがあります。
+      </p>
+
+      <section>
+        <h2>資格</h2>
+
+        <div class="cert-group">
+          <div class="cert-kind">国家資格</div>
+          <ul class="cert-list">
+            <li><span class="cert-date">2024.04</span><span class="cert-name">ネットワークスペシャリスト</span></li>
+            <li><span class="cert-date">2022.10</span><span class="cert-name">データベーススペシャリスト</span></li>
+            <li><span class="cert-date">2013.10</span><span class="cert-name">情報セキュリティスペシャリスト</span></li>
+            <li><span class="cert-date">2009.10</span><span class="cert-name">応用情報技術者</span></li>
+          </ul>
+        </div>
+
+        <div class="cert-group">
+          <div class="cert-kind">ベンダー系資格</div>
+          <ul class="cert-list">
+            <li><span class="cert-date">2025.09</span><span class="cert-name">CKS: Certified Kubernetes Security Specialist</span></li>
+            <li><span class="cert-date">2025.06</span><span class="cert-name">KCSA: Kubernetes and Cloud Native Security Associate</span></li>
+            <li><span class="cert-date">2025.05</span><span class="cert-name">CKA: Certified Kubernetes Administrator</span></li>
+            <li><span class="cert-date">2025.04</span><span class="cert-name">CKAD: Certified Kubernetes Application Developer</span></li>
+            <li><span class="cert-date">2025.03</span><span class="cert-name">KCNA: Kubernetes and Cloud Native Associate</span></li>
+            <li><span class="cert-date">2022.08</span><span class="cert-name">Google Cloud – Professional Cloud Architect<span class="expired">(expired)</span></span></li>
+            <li><span class="cert-date">2022.06</span><span class="cert-name">Google Cloud – Professional Data Engineer<span class="expired">(expired)</span></span></li>
+            <li><span class="cert-date">2021.08</span><span class="cert-name">AWS Certified Advanced Networking – Specialty<span class="expired">(expired)</span></span></li>
+            <li><span class="cert-date">2021.07</span><span class="cert-name">AWS Certified Machine Learning – Specialty<span class="expired">(expired)</span></span></li>
+            <li><span class="cert-date">2020.07</span><span class="cert-name">AWS Certified Database – Specialty<span class="expired">(expired)</span></span></li>
+            <li><span class="cert-date">2020.04</span><span class="cert-name">AWS Certified DevOps Engineer – Professional<span class="expired">(expired)</span></span></li>
+            <li><span class="cert-date">2020.03</span><span class="cert-name">AWS Certified Solutions Architect – Professional<span class="expired">(expired)</span></span></li>
+            <li><span class="cert-date">2020.03</span><span class="cert-name">AWS Certified Big Data – Specialty<span class="expired">(expired)</span></span></li>
+            <li><span class="cert-date">2020.02</span><span class="cert-name">AWS Certified Security – Specialty<span class="expired">(expired)</span></span></li>
+          </ul>
+        </div>
+
+        <div class="cert-group">
+          <div class="cert-kind">その他</div>
+          <ul class="cert-list">
+            <li><span class="cert-date">2023.06</span><span class="cert-name">CISSP Associate</span></li>
+            <li><span class="cert-date">2016.12</span><span class="cert-name">統計検定 2 級</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p class="contact">
+          何かリクエストがある場合、<a href="https://x.com/wa6sn" target="_blank" rel="noopener">X</a> の DM を下さい。
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <ul class="footer-links">
+          <li><a href="https://github.com/wa6sn" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://speakerdeck.com/wa6sn" target="_blank" rel="noopener">Speaker Deck</a></li>
+          <li><a href="https://wrsn0.hatenablog.com/" target="_blank" rel="noopener">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
